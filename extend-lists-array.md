@@ -2,7 +2,7 @@
 
 List in CPython is not literally a list, but a dynamic array. When items are added, the underlying array is expanded if there is no room in the array for new items. When items are removed, the array is shrunk if there is too much free space.
 
-Let's look at how CPython extends an array. The resizing logic is in the list_resize() function. It has fairly clear comments.
+Let's look at how CPython extends an array. The resizing logic is in the [list_resize()](https://github.com/python/cpython/blob/main/Objects/listobject.c#L47) function. It has fairly clear comments.
 
 First, if a new computed length of the list will fit into the current allocated space for the array, and the total number of items in the list is more than half the allocated space, then just set the new length for the list, and that's all:
 
