@@ -1,6 +1,6 @@
 # Extending the underlying array of a CPython list
 
-List in CPython is not literally a list, but a [dynamic array](https://en.wikipedia.org/wiki/Dynamic_array). When items are added, the underlying array is expanded if there is no room in the array for new items. When items are removed, the array is shrunk if there is too much free space.
+List in CPython is not a linked list, but a [dynamic array](https://en.wikipedia.org/wiki/Dynamic_array). When items are added, the underlying array is expanded if there is no room in the array for new items. When items are removed, the array is shrunk if there is too much free space.
 
 Let's look at how CPython extends an array. The resizing logic is in the [list_resize()](https://github.com/python/cpython/blob/main/Objects/listobject.c#L47) function. It has fairly clear comments.
 
